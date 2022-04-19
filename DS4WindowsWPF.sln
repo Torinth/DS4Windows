@@ -35,9 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DS4Windows.Shared.Configura
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DS4Windows.Shared.Common.Interfaces", "DS4Windows.Shared.Common.Interfaces\DS4Windows.Shared.Common.Interfaces.csproj", "{7310E296-9F83-41D6-BEC6-37C12D90F3C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS4Windows.Shared.Common.Util", "DS4Windows.Shared.Common.Utils\DS4Windows.Shared.Common.Util.csproj", "{94A5CDAF-E0C5-4D48-8404-6051426417E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DS4Windows.Shared.Common.Util", "DS4Windows.Shared.Common.Utils\DS4Windows.Shared.Common.Util.csproj", "{94A5CDAF-E0C5-4D48-8404-6051426417E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ds4Windows.Shared.Devices.Interfaces", "Ds4Windows.Shared.Devices.Interfaces\Ds4Windows.Shared.Devices.Interfaces.csproj", "{4CE273C4-E1D7-4E41-8AD5-4209DA2E83AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ds4Windows.Shared.Devices.Interfaces", "Ds4Windows.Shared.Devices.Interfaces\Ds4Windows.Shared.Devices.Interfaces.csproj", "{4CE273C4-E1D7-4E41-8AD5-4209DA2E83AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
