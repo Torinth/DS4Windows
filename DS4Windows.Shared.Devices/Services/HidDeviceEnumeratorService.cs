@@ -283,6 +283,10 @@ public class HidDeviceEnumeratorService : IHidDeviceEnumeratorService
 
         activity?.SetTag("Path", symLink);
 
+        try
+        {
+
+        
         var device = PnPDevice.GetDeviceByInterfaceId(symLink);
 
         logger.LogInformation("HID Device {Instance} ({Path}) arrived",
@@ -309,10 +313,16 @@ public class HidDeviceEnumeratorService : IHidDeviceEnumeratorService
             connectedDevices.Add(entry);
 
         DeviceArrived?.Invoke(entry);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 
     private void DeviceNotificationListenerOnDeviceRemoved(string symLink)
     {
+        Debug.WriteLine("device removed called");
         using var activity = CoreActivity.StartActivity(
             $"{nameof(HidDeviceEnumeratorService)}:{nameof(DeviceNotificationListenerOnDeviceRemoved)}");
 

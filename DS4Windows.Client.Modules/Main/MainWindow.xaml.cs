@@ -3,6 +3,7 @@ using MaterialDesignExtensions.Controls;
 using System;
 using System.ComponentModel;
 using System.Windows;
+using DS4Windows.Shared.Devices.Services;
 
 namespace DS4Windows.Client.Modules.Main
 {
@@ -12,11 +13,13 @@ namespace DS4Windows.Client.Modules.Main
     public partial class MainWindow : MaterialWindow, IMainView
     {
         private readonly IDeviceNotificationListener deviceNotificationListener;
+        private readonly IWinUsbControllersEnumeratorService winUsbControllersEnumeratorService;
 
-        public MainWindow(IDeviceNotificationListener deviceNotificationListener)
+        public MainWindow(IDeviceNotificationListener deviceNotificationListener, IWinUsbControllersEnumeratorService winUsbControllersEnumeratorService)
         {
             InitializeComponent();
             this.deviceNotificationListener = deviceNotificationListener;
+            this.winUsbControllersEnumeratorService = winUsbControllersEnumeratorService;
         }
         protected override void OnSourceInitialized(EventArgs e)
         {
@@ -27,6 +30,7 @@ namespace DS4Windows.Client.Modules.Main
             NativeMethods.HidD_GetHidGuid(ref hidGuid);
 
             deviceNotificationListener.StartListen(this, hidGuid);
+            winUsbControllersEnumeratorService.Start();
         }
 
         protected override void OnClosing(CancelEventArgs e)

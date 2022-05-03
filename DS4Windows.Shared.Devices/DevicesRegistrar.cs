@@ -26,6 +26,7 @@ public class DevicesRegistrar : IServiceRegistrar
         services.AddSingleton<IOutputSlotManager, OutputSlotManager>();
         services.AddSingleton<IWdiWrapper, WdiWrapper>();
         services.AddSingleton<IControllerDriverManagementService, ControllerDriverManagementService>();
+        services.AddSingleton<IWinUsbControllersEnumeratorService, WinUsbControllersEnumeratorService>();
 
         //
         // ViGEm Client (Gen1) service
